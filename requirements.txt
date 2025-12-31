@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+python-dotenv
+google-generativeai
+streamlit
+ics
+dateparser
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
+google-api-python-client
+faiss-cpu
+langchain
+langchain-huggingface
+langchain-text-splitters
+sentence-transformers

@@ -1,0 +1,35 @@
+{
+  "status": "success",
+  "summary": "The meeting focused on finalizing the EcoGlow campaign, collecting updated feedback, and creating marketing content drafts.",
+  "generated_tasks": [
+    {
+      "task": "Finalize EcoGlow campaign design",
+      "assignee": "Riya",
+      "deadline": "2025-11-10T17:00:00+05:30",
+      "status": "scheduled"
+    },
+    {
+      "task": "Collect updated customer feedback",
+      "assignee": "Arjun",
+      "deadline": "2025-11-11T17:00:00+05:30",
+      "status": "scheduled"
+    },
+    {
+      "task": "Create marketing content draft",
+      "assignee": "Nisha",
+      "deadline": "2025-11-13T17:00:00+05:30",
+      "status": "scheduled"
+    }
+  ],
+  "query_response": {
+    "user_query": "Who has the nearest deadline?",
+    "answer": "Arjun has the nearest deadline, which is on 2025-11-11.",
+    "context_used": "Based on extracted task data from the meeting transcript."
+  },
+  "calendar_event_links": [
+    "https://calendar.google.com/event?eid=EcoGlow-Task1",
+    "https://calendar.google.com/event?eid=EcoGlow-Task2",
+    "https://calendar.google.com/event?eid=EcoGlow-Task3"
+  ],
+  "execution_time": "2.6s"
+}

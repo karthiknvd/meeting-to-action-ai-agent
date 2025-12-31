@@ -1,0 +1,7 @@
+{
+  "input_mode": "text", 
+  "meeting_transcript": "Riya will finalize the EcoGlow campaign design. Arjun will collect updated customer feedback by Tuesday. Nisha will create the marketing content draft and share it by Thursday.",
+  "calendar_sync": true,
+  "query": "Who has the nearest deadline?",
+  "timezone": "Asia/Kolkata"
+}

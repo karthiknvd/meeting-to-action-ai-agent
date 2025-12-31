@@ -1,0 +1,49 @@
+{
+  "agent_name": "Meeting to Action Agent",
+  "version": "1.0.0",
+  "description": "An AI-powered meeting assistant that converts meeting discussions into structured action items and automatically syncs them to Google Calendar. The backend (FastAPI) handles NLP processing and scheduling via LangChain and Google APIs, while the Streamlit frontend provides a simple interactive UI for users to manage meeting summaries and tasks.",
+  "author": [
+    "N Venkata Durga Karthik",
+    "D Naga Pallavi",
+    "J Sritha Reddy"
+  ],
+  "language": "Python",
+  "frameworks": [
+    "FastAPI",
+    "Streamlit",
+    "LangChain",
+    "Google Generative AI",
+    "Google Calendar API"
+  ],
+  "environment": "Local",
+  "license": "MIT",
+  "tags": [
+    "Meeting Automation",
+    "NLP",
+    "Task Management",
+    "Calendar Integration",
+    "AI Agent"
+  ],
+  "dependencies": [
+    "fastapi",
+    "uvicorn",
+    "python-dotenv",
+    "google-generativeai",
+    "streamlit",
+    "ics",
+    "dateparser",
+    "google-auth",
+    "google-auth-oauthlib",
+    "google-auth-httplib2",
+    "google-api-python-client",
+    "faiss-cpu",
+    "langchain",
+    "langchain-huggingface",
+    "langchain-text-splitters",
+    "sentence-transformers"
+  ],
+  "entry_points": {
+    "backend": "uvicorn main:app --reload",
+    "frontend": "streamlit run chat_app.py"
+  }
+}
