@@ -112,10 +112,10 @@ pip install -r requirements.txt
 Create a `.env` file in the root directory:
 
 ```env
-GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY
+GEMINI_API_KEY = YOUR_GEMINI_API_KEY
 ```
 
-> ⚠️ **Do not commit `.env` or credential files to GitHub**
+> ⚠️ **Do not commit your `.env` or credential files to GitHub**
 
 ---
 
@@ -148,11 +148,11 @@ streamlit run chat_app.py
 ## 🔐 Security Notes
 
 * OAuth credentials and API keys are **not included** in the repository.
-* Sensitive files are managed using `.env` and `.gitignore`.
+* Sensitive files are managed using `.env` and `credentials.json`.
 * Only example configuration files are committed.
 
 ---
 
 ## 🏁 License
 
-This project is licensed under the **MIT License**.
+This is an open-source project, and contributions, experimentation, and learning are welcome.
