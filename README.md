@@ -1,92 +1,158 @@
-Meeting to Action Agent
-🧠 Overview
+# 🧠 Meeting to Action Agent
 
-The Meeting to Action Agent is an AI-powered system that analyzes meeting transcripts (from text or uploaded .txt files), extracts action items with assignees and deadlines, and automatically syncs them with Google Calendar.
-It can also answer contextual queries like:
+## 📌 Overview
 
-What is Arjun’s task?
+**Meeting to Action Agent** is an AI-powered system that transforms meeting discussions into **structured action items** and seamlessly syncs them with **Google Calendar**.
 
-Who has the nearest deadline?
+It analyzes meeting transcripts (entered as text or uploaded as `.txt` files), extracts **tasks, assignees, and deadlines**, and enables users to ask **context-aware follow-up questions** such as:
 
-What did we discuss in the meeting?
+* *What is Arjun’s task?*
+* *Who has the nearest deadline?*
+* *What did we discuss in the meeting?*
+* *What is Riya’s deadline?*
 
-What is Riya’s deadline?
+Built using **FastAPI**, **Streamlit**, **LangChain**, and **Google Generative AI**, this project bridges the gap between **discussion and execution**, turning meetings into actionable, trackable outcomes.
 
-Built using FastAPI, Streamlit, LangChain, and Google Generative AI, this agent bridges understanding and execution — turning team discussions into trackable actions.
+---
 
-👨‍💻 Team Members
+## 👨‍💻 Team Members
 
-N. Venkata Durga Karthik
+* **N. Venkata Durga Karthik** — Backend Development & AI Integration
+* **D. Naga Pallavi** — Frontend Development (Streamlit UI)
+* **J. Sritha Reddy** — API Integration & LLM-based Text Processing
 
-D. Naga Pallavi
+---
 
-J. Sritha Reddy
+## ⚙️ Tech Stack
 
-⚙️ Tech Stack
+### Backend
 
-Backend: FastAPI, Uvicorn
+* FastAPI
+* Uvicorn
 
-Frontend: Streamlit
+### Frontend
 
-AI/NLP: LangChain, Google Generative AI, Sentence Transformers
+* Streamlit
 
-Calendar Integration: Google Calendar API
+### AI & Text Processing
 
-Storage & Parsing: FAISS, Dateparser, ics
+* LangChain
+* Google Generative AI
+* Sentence Transformers
 
-Environment: Local
+### Calendar Integration
 
-🧾 Input Example
+* Google Calendar API
+
+### Storage & Parsing
+
+* FAISS
+* Dateparser
+* `ics`
+
+### Environment
+
+* Local Development
+
+---
+
+## 🧾 Input Example
+
+```json
 {
   "input_mode": "text",
-  "meeting_transcript": "Riya will finalize the EcoGlow campaign design...",
+  "meeting_transcript": "Riya will finalize the EcoGlow campaign design by Friday. Arjun will prepare the budget proposal by Wednesday.",
   "calendar_sync": true,
   "query": "Who has the nearest deadline?",
   "timezone": "Asia/Kolkata"
 }
+```
 
-📤 Output Example
+---
+
+## 📤 Output Example
+
+```json
 {
   "status": "success",
-  "summary": "Meeting focused on finalizing the EcoGlow campaign.",
-  "generated_tasks": [...],
+  "summary": "Meeting focused on finalizing the EcoGlow campaign and budget planning.",
+  "generated_tasks": [
+    {
+      "assignee": "Arjun",
+      "task": "Prepare the budget proposal",
+      "deadline": "Wednesday"
+    },
+    {
+      "assignee": "Riya",
+      "task": "Finalize the EcoGlow campaign design",
+      "deadline": "Friday"
+    }
+  ],
   "query_response": {
     "user_query": "Who has the nearest deadline?",
     "answer": "Arjun has the nearest deadline."
   }
 }
+```
 
-⚙️ How to Run
+---
 
-Install dependencies
+## ⚙️ How to Run
 
+### 1️⃣ Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
+---
 
-Add your API keys in a .env file:
+### 2️⃣ Configure Environment Variables
 
-GOOGLE_API_KEY=AIzaSyAl70VTFyyvsv1LvjtE3swwLu_95057lWM
+Create a `.env` file in the root directory:
 
+```env
+GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY
+```
 
-Run backend (FastAPI):
+> ⚠️ **Do not commit `.env` or credential files to GitHub**
 
+---
+
+### 3️⃣ Run Backend (FastAPI)
+
+```bash
 uvicorn main:app --reload
+```
 
+---
 
-Run frontend (Streamlit):
+### 4️⃣ Run Frontend (Streamlit)
 
+```bash
 streamlit run chat_app.py
+```
 
-🧩 How It Works
+---
 
-Upload or type your meeting transcript in the Streamlit UI.
+## 🧩 How It Works
 
-The backend extracts tasks, deadlines, and people using NLP.
+1. Users upload or paste meeting transcripts via the Streamlit interface.
+2. The FastAPI backend processes the text using **LLM-based analysis**.
+3. Tasks, assignees, and deadlines are extracted and structured.
+4. Valid tasks are optionally synced to **Google Calendar**.
+5. Users can ask follow-up questions to retrieve summaries, responsibilities, and deadlines.
 
-It syncs valid tasks to Google Calendar.
+---
 
-Ask follow-up questions in chat to get task summaries and deadlines.
+## 🔐 Security Notes
 
-🏁 License
+* OAuth credentials and API keys are **not included** in the repository.
+* Sensitive files are managed using `.env` and `.gitignore`.
+* Only example configuration files are committed.
 
-Licensed under MIT License.
+---
+
+## 🏁 License
+
+This project is licensed under the **MIT License**.
